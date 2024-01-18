@@ -1,10 +1,35 @@
 ﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!--model und so kann potentiell entfernt werden-->
+@model WebApplication1.Pages.IndexModel
+@{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        @{
+            Html.RenderPartial("_links");
+        }
+    </head>
+    <body>
+        <main>
+            <div class="contentDiv">
+                <div class="selection">
+                    <div class="selectionbox">
+                        
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="infobox">
+                        
+                    </div>
+                    <div class="chatbox">
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </body>
+    </html>
+}
