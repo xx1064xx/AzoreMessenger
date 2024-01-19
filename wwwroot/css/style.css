@@ -7,6 +7,8 @@ body {
     background-image: url('/images/background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'League Spartan', sans-serif;
+    color: white;
 }
 
 main {
@@ -38,7 +40,7 @@ main {
         .contentDiv .selection .selectionbox {
             height: calc(100% - 20px);
             width: calc(100% - 15px);
-            background-color: gray;
+            background-color: lightgray;
             border-radius: 5px;
             margin-top: 10px;
             margin-right: 5px; 
