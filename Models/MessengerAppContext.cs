@@ -1,4 +1,4 @@
-﻿using AzoreMessenger.Models;
+﻿using AzoreMessanger.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AzoreMessanger.Models

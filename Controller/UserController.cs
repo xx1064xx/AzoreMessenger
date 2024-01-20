@@ -61,7 +61,7 @@ namespace AzoreMessanger.Controller
                 };
                 _context.Users.Add(newUser);
                 _context.SaveChanges();
-                return Ok(CreateToken(newUser.Id, newUser.email);
+                return Ok(CreateToken(newUser.Id, newUser.email));
             }
 
             return BadRequest();
