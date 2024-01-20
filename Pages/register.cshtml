@@ -10,7 +10,7 @@
         @{
             Html.RenderPartial("_links");
         }
-        <script src="/js/login.js"></script>
+        <script src="/js/register.js"></script>
     </head>
     <body>
         <main>
@@ -22,16 +22,18 @@
                     </div>
                 </div>
                 <div class="loginFrame2">
-                    <h2>Login</h2>
+                    <h2>Registrieren</h2>
                     <div class="loginData">
-                        <form id="login">
+                        <form id="register">
                             <div class="loginInformation">
+                                <input type="text" id="username" name="username" placeholder="Benutzername" required>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                                 <input type="password" id="password" name="password" placeholder="Passwort" required>
+                                <input type="password" id="password" name="password" placeholder="bestätige Passwort" required>
                             </div>
                             <div class="loginApply">
-                                <a href="/register">Registrieren</a>
-                                <button type="submit">Anmelden</button>
+                                <a href="/login">zum Login</a>
+                                <button type="submit">Registrieren</button>
                             </div>
                         </form>
                     </div>

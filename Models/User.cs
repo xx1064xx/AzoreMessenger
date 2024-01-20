@@ -7,5 +7,7 @@
         public string? email { get; set; }
         public string? password { get; set; }
         public string? Salt { get; set; }
+
+        public string? keyPass { get; set; }
     }
 }

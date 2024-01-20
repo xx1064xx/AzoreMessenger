@@ -1,6 +1,6 @@
 ﻿.contentDiv {
     display: flex;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 80px);
     width: 100%;
     margin-left: 20px;
     margin-right: 20px;
@@ -76,7 +76,7 @@
 
     .contentDiv .information .infobox {
         height: 100px;
-        width: calc(100% - 25px);
+        width: calc(100% - 30px);
         border-radius: 5px;
         margin-top: 20px;
         margin-right: 20px;
@@ -87,7 +87,7 @@
 
     .contentDiv .information .chatbox {
         height: calc(100% - 160px);
-        width: calc(100% - 25px);
+        width: calc(100% - 30px);
         border-radius: 5px;
         margin-top: 10px;
         margin-right: 20px;
