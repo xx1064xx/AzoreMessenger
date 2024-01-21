@@ -7,7 +7,6 @@ namespace AzoreMessanger.Models
     {
         public MessengerAppContext(DbContextOptions<MessengerAppContext> options)
             : base(options) { }
-        public DbSet<Chat> Chats { get; set; } = null!;
         public DbSet<User> Users { get; set; } = null!;
 
     }

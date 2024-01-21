@@ -1,8 +1,23 @@
+using AzoreMessanger.DbAccess;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
+
+using Microsoft.EntityFrameworkCore;
+using AzoreMessanger.Models;
+using AzoreMessanger.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using AzoreMessanger.Controller;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<MessengerAppContext>(opt =>
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<DbInitializer>();
 
 var provider = new FileExtensionContentTypeProvider();
 provider.Mappings[".js"] = "application/javascript";
@@ -44,4 +59,10 @@ app.MapRazorPages();
 
 app.MapControllers();
 
+using (var azore = app.Services.CreateScope()) // oberhalb von app.Run()
+{
+    azore.ServiceProvider.GetRequiredService<DbInitializer>().Run(); // run initializer
+}
+
 app.Run();
+

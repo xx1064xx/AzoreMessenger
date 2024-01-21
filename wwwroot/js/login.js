@@ -24,4 +24,4 @@ async function submitRegisterForm(e) {
 
 }
 
-document.querySelector('#form').addEventListener('submit', submitRegisterForm);
+document.querySelector('form').addEventListener('submit', submitRegisterForm);
