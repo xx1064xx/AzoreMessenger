@@ -1,0 +1,9 @@
+- User Daten bearbeiten
+- User löschen
+- Clients speichern
+- für jeden neuen client einen private key generieren || alten key auf neuen client importieren
+- key mit passkey verschlüsseln
+- chat senden
+- chat auslesen
+- chat entschlüsseln
+- chat verschlüsseln

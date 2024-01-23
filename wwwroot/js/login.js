@@ -3,6 +3,7 @@ async function submitRegisterForm(e) {
 
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
+    var passInput = document.getElementById('password');
 
     try {
         const loginInfo = await login(email, password);
@@ -11,11 +12,13 @@ async function submitRegisterForm(e) {
             window.location.href = '../index';
         }
         else {
-            console.log("Login ERROR")
+            passInput.style.border = '2px solid red';
+            passInput.placeholder = 'Passwort oder Email ist falsch';
+            passInput.value = '';
         }
     }
     catch (err) {
-        console.log("Login ERROR")
+        
     }
 
 }
