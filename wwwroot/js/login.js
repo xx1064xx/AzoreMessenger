@@ -11,11 +11,11 @@ async function submitRegisterForm(e) {
             window.location.href = '../index';
         }
         else {
-            document.querySelector('#login-error').innerText = 'Login Failed.';
+            console.log("Login ERROR")
         }
     }
     catch (err) {
-        document.querySelector('#login-error').innerText = err.message;
+        console.log("Login ERROR")
     }
 
     console.log("Email: " + email);
@@ -24,4 +24,6 @@ async function submitRegisterForm(e) {
 
 }
 
-document.querySelector('form').addEventListener('submit', submitRegisterForm);
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('form').addEventListener('submit', submitRegisterForm);
+});

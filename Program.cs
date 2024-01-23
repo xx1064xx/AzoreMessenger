@@ -36,6 +36,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -59,9 +61,9 @@ app.MapRazorPages();
 
 app.MapControllers();
 
-using (var azore = app.Services.CreateScope()) // oberhalb von app.Run()
+using (var azore = app.Services.CreateScope()) 
 {
-    azore.ServiceProvider.GetRequiredService<DbInitializer>().Run(); // run initializer
+    azore.ServiceProvider.GetRequiredService<DbInitializer>().Run();
 }
 
 app.Run();
