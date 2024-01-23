@@ -44,7 +44,10 @@ namespace AzoreMessanger.Controller
     public class UsersController : ControllerBase
     {
         private readonly MessengerAppContext _context;
-        public UsersController(MessengerAppContext context) { _context = context; }
+        public UsersController(MessengerAppContext context)
+        {
+            _context = context; 
+        }
 
 
         [HttpPost("register")]
