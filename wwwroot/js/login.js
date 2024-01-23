@@ -18,10 +18,6 @@ async function submitRegisterForm(e) {
         console.log("Login ERROR")
     }
 
-    console.log("Email: " + email);
-    console.log("password: " + password);
-    console.log("Login Info: " + loginInfo);
-
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {

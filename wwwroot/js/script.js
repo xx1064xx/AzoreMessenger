@@ -1,4 +1,5 @@
 function signOut() {
     localStorage.removeItem("jwt-token");
-    toggleProfile();
+    window.location.href = '../login';
 }
+

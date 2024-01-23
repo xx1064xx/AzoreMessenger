@@ -6,15 +6,15 @@ async function submitRegisterForm(e) {
     const password = document.querySelector('#password').value;
 
     try {
-        const loginInfo = await register(firstName, familyName, userName, email, password);
+        const loginInfo = await register(username, email, password);
         localStorage.setItem('jwt-token', loginInfo.jwt);
         window.location.href = '../';
     }
     catch (err) {
-        document.querySelector('#register-error').innerText = err.message;
+        console.log("login ERROR")
     }
-
-
 }
 
-document.querySelector('form').addEventListener('submit', submitRegisterForm);
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('form').addEventListener('submit', submitRegisterForm);
+});
