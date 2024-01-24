@@ -29,7 +29,6 @@ async function browserRecognition() {
 
         if (localBrowserId == null) {
 
-            console.log("huere mongo bis da gahts");
 
             const browser = browserSelector();
 

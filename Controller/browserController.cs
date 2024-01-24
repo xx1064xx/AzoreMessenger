@@ -39,24 +39,24 @@ namespace AzoreMessanger.Controller
         [HttpPost("setBrowser")]
         public IActionResult setBrowser(BrowserInfo browserInfo)
         {
-            /*
-            // rechnet die tiefstverfügbare Browsernummer aus (Für bessere Darstellung)
-            int? minBrowserNumber = _context.Browsers
-            .Where(browser => browser.userId == browser.userId && browser.browsernumber != null)
-            .Min(browser => (int?)browser.browsernumber);
-            */
 
-            int minBrowserNumber = 1;
+            // rechnet die tiefstverfügbare Browsernummer aus (Für bessere Darstellung)
+            int? minUnusedBrowserNumber = Enumerable.Range(1, int.MaxValue)
+            .Except(_context.Browsers
+            .Where(browser => browser.userId == (int)browserInfo.userId && browser.browsernumber.HasValue)
+            .Select(browser => browser.browsernumber.Value))
+            .Min();
+
 
             Browser newBrowser = new Browser()
             {
                 browsername = browserInfo.browsername,
-                browsernumber = minBrowserNumber,
+                browsernumber = minUnusedBrowserNumber,
                 userId = browserInfo.userId,
             };
             _context.Browsers.Add(newBrowser);
             _context.SaveChanges();
-            return Ok(minBrowserNumber);
+            return Ok(minUnusedBrowserNumber);
             
         }
 
