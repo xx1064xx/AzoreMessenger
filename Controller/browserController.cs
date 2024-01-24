@@ -41,11 +41,7 @@ namespace AzoreMessanger.Controller
         {
 
             // rechnet die tiefstverfügbare Browsernummer aus (Für bessere Darstellung)
-            int? minUnusedBrowserNumber = Enumerable.Range(1, int.MaxValue)
-            .Except(_context.Browsers
-            .Where(browser => browser.userId == (int)browserInfo.userId && browser.browsernumber.HasValue)
-            .Select(browser => browser.browsernumber.Value))
-            .Min();
+            int minUnusedBrowserNumber = 1;
 
 
             Browser newBrowser = new Browser()
