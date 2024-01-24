@@ -26,3 +26,6 @@ async function submitRegisterForm(e) {
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('form').addEventListener('submit', submitRegisterForm);
 });
+
+var browser = browserSelector();
+console.log(browser);
