@@ -25,3 +25,29 @@ async function register(username, email, password) {
     const data = await request.json();
     return data;
 }
+
+async function getCurrentUser(token) {
+    const request = await fetch(`https://localhost:7020/api/users/getCurrentUser`, {
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        method: 'GET'
+    });
+    const data = await request.json();
+    return data;
+}
+
+async function setBrowser(userId, browsername) {
+    const request = await fetch(`https://localhost:7020/api/browsers/setBrowser`, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        cache: 'no-cache',
+        method: 'POST',
+        body: JSON.stringify({ 'userId': userId, 'browsername': browsername})
+    });
+    const data = await request.json();
+    return data;
+}

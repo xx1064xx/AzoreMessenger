@@ -9,5 +9,7 @@ namespace AzoreMessanger.Models
             : base(options) { }
         public DbSet<User> Users { get; set; } = null!;
 
+        public DbSet<Browser> Browsers { get; set; } = null!;
+
     }
 }

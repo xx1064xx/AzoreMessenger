@@ -9,7 +9,12 @@ async function submitRegisterForm(e) {
         const loginInfo = await login(email, password);
         if (loginInfo.jwt !== undefined) {
             localStorage.setItem('jwt-token', loginInfo.jwt);
+
+            browserRecognition();
+
             window.location.href = '../index';
+
+
         }
         else {
             passInput.style.border = '2px solid red';
@@ -26,6 +31,3 @@ async function submitRegisterForm(e) {
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('form').addEventListener('submit', submitRegisterForm);
 });
-
-var browser = browserSelector();
-console.log(browser);

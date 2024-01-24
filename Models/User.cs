@@ -9,5 +9,6 @@
         public string? Salt { get; set; }
 
         public string? keyPass { get; set; }
+
     }
 }
