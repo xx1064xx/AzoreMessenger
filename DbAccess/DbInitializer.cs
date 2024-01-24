@@ -25,6 +25,14 @@ namespace AzoreMessanger.DbAccess
                         Salt = salt
                     });
 
+                _context.Browsers.Add(
+                    new Browser
+                    {
+                        browsername = "admin",
+                        browsernumber = 2000,
+                        userId = 1
+                    });
+
                 _context.SaveChanges();
             }
 

@@ -12,7 +12,7 @@ async function submitRegisterForm(e) {
 
             browserRecognition();
 
-            window.location.href = '../index';
+            //window.location.href = '../index';
 
 
         }
