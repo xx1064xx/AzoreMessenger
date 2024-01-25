@@ -34,16 +34,25 @@ async function browserRecognition() {
 
             const browserId = await setBrowser(userID, browser);
 
-            var localstorageContent = {
-                browserName: browser,
-                browserId: browserId
-            };
+            var localstorageContent = browser + "/" + browserId;
 
             localStorage.setItem(userID + "BrowserId", localstorageContent);
 
         }
         else {
-            console.log("BrowserId vorhanden");
+
+            userID = await getUserId();
+
+            var storedValue = localStorage.getItem(userID + "BrowserId");
+
+            var parts = storedValue.split('/');
+            var storedBrowserName = parts[0];
+            var storedBrowserId = parts[1];
+
+            console.log(storedBrowserName);
+            console.log(storedBrowserId);
+
+
 
 
         }
