@@ -4,7 +4,6 @@
     {
         public long Id { get; set; }
         public string? browsername { get; set; }
-        public int? browsernumber { get; set; }
 
         public DateTime? browserdate { get; set; }
 
