@@ -41,8 +41,6 @@ namespace AzoreMessanger.Controller
         public IActionResult setBrowser(BrowserInfo browserInfo)
         {
 
-
-
             Browser newBrowser = new Browser()
             {
                 browsername = browserInfo.browsername,
@@ -50,7 +48,10 @@ namespace AzoreMessanger.Controller
             };
             _context.Browsers.Add(newBrowser);
             _context.SaveChanges();
-            return Ok();
+
+            long newBrowserId = newBrowser.Id;
+
+            return Ok(newBrowserId);
             
         }
 

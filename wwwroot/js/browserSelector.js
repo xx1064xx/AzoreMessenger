@@ -34,7 +34,10 @@ async function browserRecognition() {
 
             const browserId = await setBrowser(userID, browser);
 
-            const localstorageContent = browser + browserId;
+            var localstorageContent = {
+                browserName: browser,
+                browserId: browserId
+            };
 
             localStorage.setItem(userID + "BrowserId", localstorageContent);
 

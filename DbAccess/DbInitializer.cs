@@ -29,7 +29,6 @@ namespace AzoreMessanger.DbAccess
                     new Browser
                     {
                         browsername = "admin",
-                        browsernumber = 2000,
                         userId = 1
                     });
 

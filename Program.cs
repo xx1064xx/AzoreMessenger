@@ -70,7 +70,19 @@ app.UseStaticFiles(new StaticFileOptions
     ContentTypeProvider = provider,
     OnPrepareResponse = context =>
     {
-        if (!context.File.Name.EndsWith(".html")) // Hier anpassen für die Dateitypen, die du bearbeiten möchtest
+        if (!context.File.Name.EndsWith(".html"))
+        {
+            context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
+            context.Context.Response.Headers["Pragma"] = "no-cache";
+            context.Context.Response.Headers["Expires"] = "-1";
+        }
+        if (!context.File.Name.EndsWith(".css"))
+        {
+            context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
+            context.Context.Response.Headers["Pragma"] = "no-cache";
+            context.Context.Response.Headers["Expires"] = "-1";
+        }
+        if (!context.File.Name.EndsWith(".js"))
         {
             context.Context.Response.Headers["Cache-Control"] = "no-cache, no-store";
             context.Context.Response.Headers["Pragma"] = "no-cache";
